@@ -113,7 +113,7 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
     }
   })
 
-  fetchLocalStorage()
+  fetchLocalStorage(formInputs)
 
   $('#field-birthday').addEventListener('keyup', function (event) {
     event.preventDefault()
