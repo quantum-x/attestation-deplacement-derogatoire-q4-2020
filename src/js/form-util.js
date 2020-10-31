@@ -33,6 +33,17 @@ const conditions = {
   },
 }
 
+function fetchLocalStorage() {
+    for (var field of formInputs) {
+      if (field.id === 'field-firstname'  ||
+          field.id === 'field-lastname'   ||
+          field.id === 'field-birthday'   ||
+          field.id === 'field-placeofbirth') {
+        $(field.id).value = localStorage.getItem(field.id);
+      }
+    }
+}
+
 function validateAriaFields () {
   return Object.keys(conditions)
     .map((field) => {
@@ -102,6 +113,8 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
     }
   })
 
+  fetchLocalStorage()
+
   $('#field-birthday').addEventListener('keyup', function (event) {
     event.preventDefault()
     const input = event.target
@@ -134,6 +147,17 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
     if (invalid) {
       return
     }
+
+    //Set local storage variables
+    for (var field of formInputs) {
+      if (field.id === 'field-firstname'  ||
+          field.id === 'field-lastname'   ||
+          field.id === 'field-birthday'   ||
+          field.id === 'field-placeofbirth') {
+        localStorage.setItem(field.id, field.id.value);
+      }
+    }
+    
 
     console.log(getProfile(formInputs), reasons)
 
