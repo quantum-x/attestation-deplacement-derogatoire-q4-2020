@@ -141,10 +141,11 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
 
     const reasons = getReasons(reasonInputs)
     if (!reasons) {
-      reasonFieldset.classList.add('fieldset-error')
-      reasonAlert.classList.remove('hidden')
-      reasonFieldset.scrollIntoView && reasonFieldset.scrollIntoView()
-      return
+      reasons = "sport_animaux"
+      //reasonFieldset.classList.add('fieldset-error')
+      //reasonAlert.classList.remove('hidden')
+      //reasonFieldset.scrollIntoView && reasonFieldset.scrollIntoView()
+      //return
     }
 
     const invalid = validateAriaFields()
