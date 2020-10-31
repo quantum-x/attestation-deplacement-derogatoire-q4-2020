@@ -67,11 +67,12 @@ function validateAriaFields () {
     .includes(true)
 }
 
-export function setReleaseDateTime (releaseDateInput) {
+export function setReleaseDateTime (releaseDateInput, releaseTimeInput) {
   var currentDate = new Date();
   var timeDelta = Math.floor(Math.random() * (35 - 10 + 1) ) + 10;
   const loadedDate = new Date(currentDate.getTime() - timeDelta*60000)  
   releaseDateInput.value = getFormattedDate(loadedDate)
+  releaseTimeInput.value = getFormattedTime(loadedDate)
 }
 
 export function setAddress (geoAddress) {
@@ -193,6 +194,7 @@ export function prepareForm () {
   const reasonFieldset = $('#reason-fieldset')
   const reasonAlert = reasonFieldset.querySelector('.msg-alert')
   const releaseDateInput = $('#field-datesortie')
-  setReleaseDateTime(releaseDateInput)
+  const releaseTimeInput = $('#field-heuresortie')
+  setReleaseDateTime(releaseDateInput, releaseTimeInput)
   prepareInputs(formInputs, reasonInputs, reasonFieldset, reasonAlert, snackbar)
 }
