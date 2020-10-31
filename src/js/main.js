@@ -4,7 +4,7 @@ import '../css/main.css'
 
 import './icons'
 import './check-updates'
-import { prepareForm } from './form-util'
+import { prepareForm, updateAddress } from './form-util'
 import { warnFacebookBrowserUserIfNecessary } from './facebook-util'
 import { addVersion } from './util'
 import { getLocation} from './geocode'
