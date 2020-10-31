@@ -39,7 +39,7 @@ function fetchLocalStorage(formInputs) {
           field.id === 'field-lastname'   ||
           field.id === 'field-birthday'   ||
           field.id === 'field-placeofbirth') {
-        $('#'.field.id).value = localStorage.getItem(field.id);
+        $(field).value = localStorage.getItem(field.id);
       }
     }
 }
