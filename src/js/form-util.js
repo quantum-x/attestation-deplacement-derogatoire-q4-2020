@@ -59,8 +59,7 @@ export function setReleaseDateTime (releaseDateInput) {
 }
 
 export function setAddress (geoAddress) {
-  const loadedDate = new Date()
-  field-address.value = geoAddress.title
+  $('#field-address').value = geoAddress.title
 }
 
 export function getProfile (formInputs) {
