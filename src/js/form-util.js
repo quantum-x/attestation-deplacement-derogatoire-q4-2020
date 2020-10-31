@@ -58,6 +58,11 @@ export function setReleaseDateTime (releaseDateInput) {
   releaseDateInput.value = getFormattedDate(loadedDate)
 }
 
+export function setAddress (geoAddress) {
+  const loadedDate = new Date()
+  field-address.value = geoAddress.title
+}
+
 export function getProfile (formInputs) {
   const fields = {}
   for (const field of formInputs) {
@@ -148,7 +153,9 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
     }, 6000)
   })
 }
-
+export function updateAddress(addressObj) {
+  setAddress(addressObj)
+}
 export function prepareForm () {
   const formInputs = $$('#form-profile input')
   const snackbar = $('#snackbar')
