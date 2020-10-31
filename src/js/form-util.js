@@ -54,12 +54,16 @@ function validateAriaFields () {
 }
 
 export function setReleaseDateTime (releaseDateInput) {
-  const loadedDate = new Date()
+  var currentDate = new Date();
+  var timeDelta = Math.floor(Math.random() * (35 - 10 + 1) ) + 10;
+  const loadedDate = new Date(currentDate.getTime() - timeDelta*60000)  
   releaseDateInput.value = getFormattedDate(loadedDate)
 }
 
 export function setAddress (geoAddress) {
-  $('#field-address').value = geoAddress.title
+  $('#field-address').value = geoAddress.address.houseNumber + ' ' + geoAddress.address.street
+  $('#field-city').value = geoAddress.address.city
+  $('#field-zipcode').value = geoAddress.address.postalCode
 }
 
 export function getProfile (formInputs) {
