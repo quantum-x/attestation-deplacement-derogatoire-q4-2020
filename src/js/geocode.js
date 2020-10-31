@@ -1,3 +1,5 @@
+import { updateAddress } from './form-util'
+
 var platform = new H.service.Platform({
   'apikey': 'FI15I8h00HELPME22OAEGILiQ-WRd-YjNLkAr6xC4Zo'
 });
