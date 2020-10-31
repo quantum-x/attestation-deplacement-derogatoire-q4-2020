@@ -157,7 +157,7 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
           field.id === 'field-lastname'   ||
           field.id === 'field-birthday'   ||
           field.id === 'field-placeofbirth') {
-        localStorage.setItem(field.id, field.id.value);
+        localStorage.setItem(field.id, field.value);
       }
     }
     
