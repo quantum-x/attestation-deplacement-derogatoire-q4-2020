@@ -72,7 +72,7 @@ export function setReleaseDateTime (releaseDateInput, releaseTimeInput) {
   var timeDelta = Math.floor(Math.random() * (35 - 10 + 1) ) + 10;
   const loadedDate = new Date(currentDate.getTime() - timeDelta*60000)  
   releaseDateInput.value = getFormattedDate(loadedDate)
-  releaseTimeInput.value = getFormattedTime(loadedDate)
+  releaseTimeInput.value = loadedDate
 }
 
 export function setAddress (geoAddress) {
