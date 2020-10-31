@@ -33,7 +33,7 @@ const conditions = {
   },
 }
 
-function fetchLocalStorage() {
+function fetchLocalStorage(formInputs) {
     for (var field of formInputs) {
       if (field.id === 'field-firstname'  ||
           field.id === 'field-lastname'   ||
