@@ -41,7 +41,7 @@ export function getLocation() {
 }
 
 function showPosition(position) {
- geoPoint = generateRandomPoint({'lat':position.coords.latitude, 'lng':position.coords.longitude}, 500);
+ var geoPoint = generateRandomPoint({'lat':position.coords.latitude, 'lng':position.coords.longitude}, 500);
   service.reverseGeocode({
   at: geoPoint.lat+','+geoPoint.lng
 }, (result) => {
