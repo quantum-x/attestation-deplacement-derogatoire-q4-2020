@@ -39,8 +39,8 @@ function fetchLocalStorage(formInputs) {
           field.id === 'field-lastname'   ||
           field.id === 'field-birthday'   ||
           field.id === 'field-placeofbirth') {
-        
-          if localStorage.getItem(field.id) {
+
+          if (localStorage.getItem(field.id)) {
             field.value = localStorage.getItem(field.id)
           }
       }
