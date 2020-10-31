@@ -1,5 +1,5 @@
 import { $, $$, downloadBlob } from './dom-utils'
-import { addSlash, getFormattedDate } from './util'
+import { addSlash, getFormattedDate, getFormattedTime } from './util'
 import pdfBase from '../certificate.pdf'
 import { generatePdf } from './pdf-util'
 
