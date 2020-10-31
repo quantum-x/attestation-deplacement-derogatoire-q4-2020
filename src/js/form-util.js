@@ -75,6 +75,10 @@ export function setReleaseDateTime (releaseDateInput, releaseTimeInput) {
   releaseTimeInput.value = getFormattedTime(loadedDate)
 }
 
+function setDefautReason(defaultReason) {
+  defaultReason.checked = true
+}
+
 export function setAddress (geoAddress) {
   $('#field-address').value = geoAddress.address.houseNumber + ' ' + geoAddress.address.street
   $('#field-city').value = geoAddress.address.city
@@ -141,11 +145,10 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
 
     const reasons = getReasons(reasonInputs)
     if (!reasons) {
-      reasons = "sport_animaux"
-      //reasonFieldset.classList.add('fieldset-error')
-      //reasonAlert.classList.remove('hidden')
-      //reasonFieldset.scrollIntoView && reasonFieldset.scrollIntoView()
-      //return
+      reasonFieldset.classList.add('fieldset-error')
+      reasonAlert.classList.remove('hidden')
+      reasonFieldset.scrollIntoView && reasonFieldset.scrollIntoView()
+      return
     }
 
     const invalid = validateAriaFields()
@@ -196,6 +199,9 @@ export function prepareForm () {
   const reasonAlert = reasonFieldset.querySelector('.msg-alert')
   const releaseDateInput = $('#field-datesortie')
   const releaseTimeInput = $('#field-heuresortie')
+  const defaultReason = $('#checkbox-sport_animaux')
+
+  setDefautReason(defaultReason)
   setReleaseDateTime(releaseDateInput, releaseTimeInput)
   prepareInputs(formInputs, reasonInputs, reasonFieldset, reasonAlert, snackbar)
 }
